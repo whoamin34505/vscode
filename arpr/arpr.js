@@ -1,21 +1,23 @@
 document.querySelector('button').onclick = myClick;
-var ans = 0;
 
 function myClick() {
-let proton = document.querySelector('.proton').value;
-let neitron = document.querySelector('.neitron').value;
-let yadr = document.querySelector('.yadr').value;
-let a = (proton * 1.00728) + (neitron * 1.00866);
-let b = a - yadr;
-let b1 = (`Δm = (${proton} * 1.00728) + (${neitron} * 1.00866) - ${yadr} = ${b} а.е.м.`);
-let c = b * 1.661;
-let c1 = (`Переведем а.е.м в кг -> ${b} * 1.661 * 10^-27 = ${c} * 10^-27 кг`);
-let d = c * 9;
-let e = Math.round(d * 100000000) / 100000000;
-let d1 = (`ΔE = ${yadr} * (10*3^8)^2 = ${yadr} * 9 * 10^-11 = ${e} Дж`);
-let e1 = (`Ответ: ${e} х 10^-11(кг)`);
-document.querySelector('.out1').innerHTML = b1;
-document.querySelector('.out2').innerHTML = c1;
-document.querySelector('.out3').innerHTML = d1;
-document.querySelector('.out4').innerHTML = e1;
+    var ras = document.getElementById('setras').value;
+    if (ras=="raz") {
+        var site = 1
+    }
+    if (ras=="sum1") {
+        var site = 2
+    }
+    if (ras=="sum2") {
+        var site = 3
+    }
+    if (ras=="n1") {
+        var site = 4
+    }
+    if (ras=="n2") {
+        var site = 5
+    }
+	var sites = ["https://whoamin34505.github.io/raz/", "https://whoamin34505.github.io/sumraz/", "https://whoamin34505.github.io/sum/", "https://whoamin34505.github.io/ch/","https://whoamin34505.github.io/chsos/"];
+    window.location.href = sites [site-1];
+    console.log (sites [site-1])
 }
